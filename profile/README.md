@@ -95,7 +95,7 @@ Traditional forums lock your identity and data into each platform. Barazo uses t
 **Phase 1: Core MVP** -- Done
 - Auth, topics, replies, categories, search, moderation, reactions
 - Cross-posting (Bluesky + Frontpage), notifications, user profiles
-- Frontend (19 pages, 26 components), Docker Compose deployment
+- Frontend (20 pages, 28 components), Docker Compose deployment
 
 **Phase 2: User Experience + Global** -- Done
 - P2.1: Content maturity, self-labels, age gate, user preferences
