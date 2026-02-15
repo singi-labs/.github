@@ -1,19 +1,8 @@
 ![Barazo Banner](https://raw.githubusercontent.com/barazo-forum/.github/main/assets/banner.jpg)
 
+[![Status: Alpha](https://img.shields.io/badge/status-alpha-orange)]()
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://opensource.org/licenses/AGPL-3.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
----
-
-## Status: Alpha
-
-Barazo is in **active alpha development**. Core MVP is implemented with 885 API tests and 356 frontend tests passing.
-
-**Current Phase:** P2 -- User Experience + Global Aggregator (P2.1 and P2.2 complete)
-
-**Next Milestone:** P2.3 -- Age Declaration Revision + Community Onboarding Fields
-
-**Website:** [barazo.forum](https://barazo.forum) (coming soon)
 
 ---
 
@@ -43,19 +32,19 @@ Traditional forums lock your identity and data into each platform. Barazo uses t
 
 ---
 
-## Repository Structure
+## Repositories
 
-| Repository | Description | License | Status |
-|------------|-------------|---------|--------|
-| **[barazo-api](https://github.com/barazo-forum/barazo-api)** | AppView backend (Fastify, PostgreSQL, AT Protocol) | AGPL-3.0 | Alpha |
-| **[barazo-web](https://github.com/barazo-forum/barazo-web)** | Forum frontend (Next.js, TailwindCSS) | MIT | Alpha |
-| **[barazo-lexicons](https://github.com/barazo-forum/barazo-lexicons)** | AT Protocol schemas for forum data | MIT | Alpha |
-| **[barazo-deploy](https://github.com/barazo-forum/barazo-deploy)** | Docker Compose templates for self-hosting | MIT | Alpha |
-| **[barazo-website](https://github.com/barazo-forum/barazo-website)** | Marketing + documentation site | MIT | Planned |
+| Repository | Description | License | CI |
+|------------|-------------|---------|-----|
+| [barazo-api](https://github.com/barazo-forum/barazo-api) | AppView backend (Fastify, PostgreSQL, AT Protocol) | AGPL-3.0 | [![CI](https://github.com/barazo-forum/barazo-api/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-api/actions/workflows/ci.yml) |
+| [barazo-web](https://github.com/barazo-forum/barazo-web) | Forum frontend (Next.js, TailwindCSS) | MIT | [![CI](https://github.com/barazo-forum/barazo-web/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-web/actions/workflows/ci.yml) |
+| [barazo-lexicons](https://github.com/barazo-forum/barazo-lexicons) | AT Protocol schemas for forum data | MIT | [![CI](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml) |
+| [barazo-deploy](https://github.com/barazo-forum/barazo-deploy) | Docker Compose templates for self-hosting | MIT | [![Validate](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml/badge.svg)](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml) |
+| [barazo-website](https://github.com/barazo-forum/barazo-website) | Marketing + documentation site | MIT | -- |
 
 ---
 
-## Implemented Features
+## Features
 
 **Core forum:**
 - Topics, replies (threaded), categories, reactions (configurable per forum)
@@ -67,6 +56,7 @@ Traditional forums lock your identity and data into each platform. Barazo uses t
 - User profiles with PDS sync, user preferences (global + per-community)
 - Self-labels on posts (AT Protocol selfLabels)
 - Age gate (self-declaration), block/mute users (portable via PDS)
+- Admin-configurable onboarding fields per community
 
 **AT Protocol integration:**
 - OAuth sign-in with any AT Protocol PDS (Bluesky, self-hosted, etc.)
@@ -83,16 +73,14 @@ Traditional forums lock your identity and data into each platform. Barazo uses t
 - Dependabot security monitoring, backup/restore scripts
 
 **Quality:**
-- 885 API tests across 56 test files
-- 356 frontend tests across 47 test files
 - WCAG 2.2 AA accessibility compliance (vitest-axe + @axe-core/playwright)
 - Strict TypeScript (no `any`, no `@ts-ignore`)
+- Test-driven development across all repos
 
 ---
 
 ## Planned Features
 
-- Community onboarding fields (admin-configurable, P2.3)
 - Stripe billing / SaaS multi-tenant / custom domains (P3)
 - Plugin system with admin UI (P3)
 - AI features: semantic search, AI moderation, summarization, translation (P4)
@@ -109,10 +97,10 @@ Traditional forums lock your identity and data into each platform. Barazo uses t
 - Cross-posting (Bluesky + Frontpage), notifications, user profiles
 - Frontend (19 pages, 26 components), Docker Compose deployment
 
-**Phase 2: User Experience + Global** -- In Progress
-- P2.1: Content maturity, self-labels, age gate, user preferences -- Done
-- P2.2: Global aggregator, cross-community reputation, block/mute -- Done
-- P2.3: Age declaration revision, community onboarding fields -- Pending
+**Phase 2: User Experience + Global** -- Done
+- P2.1: Content maturity, self-labels, age gate, user preferences
+- P2.2: Global aggregator, cross-community reputation, block/mute
+- P2.3: Age declaration revision, community onboarding fields
 
 **Phase 3: SaaS Infrastructure**
 - Stripe billing, multi-tenant support, custom domain automation
@@ -130,6 +118,19 @@ Traditional forums lock your identity and data into each platform. Barazo uses t
 
 ---
 
+## Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| Runtime | Node.js 24 LTS, TypeScript |
+| Backend | Fastify, Drizzle ORM, PostgreSQL 16, Valkey |
+| Frontend | Next.js 16, React 19, TailwindCSS, shadcn/ui |
+| Protocol | AT Protocol SDK (@atproto/api, @atproto/tap) |
+| Hosting | Docker Compose, Hetzner VPS, Bunny.net CDN |
+| Monitoring | GlitchTip, Pino, Grafana (Phase 3) |
+
+---
+
 ## Contributing
 
 Contributions are welcome. See [CONTRIBUTING.md](https://github.com/barazo-forum/.github/blob/main/CONTRIBUTING.md) for guidelines.
@@ -141,19 +142,6 @@ Contributors sign a CLA to allow future commercial licensing flexibility.
 ## Architecture
 
 See **[ARCHITECTURE.md](https://github.com/barazo-forum/.github/blob/main/ARCHITECTURE.md)** for the full system architecture, including data flow diagrams, deployment layout, and operating modes.
-
----
-
-## Tech Stack
-
-| Component | Technology |
-|-----------|-----------|
-| Runtime | Node.js 24 LTS, TypeScript |
-| Backend | Fastify, Drizzle ORM, PostgreSQL 16, Valkey |
-| Frontend | Next.js 16, React 19, TailwindCSS, shadcn/ui |
-| Protocol | AT Protocol SDK (@atproto/api, @atproto/tap) |
-| Hosting | Docker Compose, Hetzner VPS, Bunny.net CDN |
-| Monitoring | GlitchTip, Pino, Grafana (Phase 3) |
 
 ---
 
@@ -172,19 +160,10 @@ See **[ARCHITECTURE.md](https://github.com/barazo-forum/.github/blob/main/ARCHIT
 
 ## Community
 
-- **Website:** [barazo.forum](https://barazo.forum) (coming soon)
-- **Forum:** [barazo.forum](https://barazo.forum) (launching with beta -- dogfooding our own platform)
+- **Website:** [barazo.forum](https://barazo.forum)
+- **Discussions:** [GitHub Discussions](https://github.com/orgs/barazo-forum/discussions)
 - **Bluesky:** [@barazo.forum](https://bsky.app/profile/barazo.forum)
 - **Contact:** [@gxjansen](https://github.com/gxjansen)
-
----
-
-## Acknowledgments
-
-Built with:
-- [AT Protocol](https://atproto.com/) -- The foundation for everything
-- [Bluesky](https://bsky.social/) -- Inspiration and reference implementation
-- Open source community -- Standing on the shoulders of giants
 
 ---
 
