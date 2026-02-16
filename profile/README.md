@@ -1,6 +1,7 @@
 ![Barazo Banner](https://raw.githubusercontent.com/barazo-forum/.github/main/assets/banner.jpg)
 
 [![Status: Alpha](https://img.shields.io/badge/status-alpha-orange)]()
+[![GitHub Org Stars](https://img.shields.io/github/stars/barazo-forum?style=flat&label=org%20stars)](https://github.com/barazo-forum)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://opensource.org/licenses/AGPL-3.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -34,13 +35,13 @@ Traditional forums lock your identity and data into each platform. Barazo uses t
 
 ## Repositories
 
-| Repository | Description | License | CI |
-|------------|-------------|---------|-----|
-| [barazo-api](https://github.com/barazo-forum/barazo-api) | AppView backend (Fastify, PostgreSQL, AT Protocol) | AGPL-3.0 | [![CI](https://github.com/barazo-forum/barazo-api/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-api/actions/workflows/ci.yml) |
-| [barazo-web](https://github.com/barazo-forum/barazo-web) | Forum frontend (Next.js, TailwindCSS) | MIT | [![CI](https://github.com/barazo-forum/barazo-web/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-web/actions/workflows/ci.yml) |
-| [barazo-lexicons](https://github.com/barazo-forum/barazo-lexicons) | AT Protocol schemas for forum data | MIT | [![CI](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml) |
-| [barazo-deploy](https://github.com/barazo-forum/barazo-deploy) | Docker Compose templates for self-hosting | MIT | [![Validate](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml/badge.svg)](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml) |
-| [barazo-website](https://github.com/barazo-forum/barazo-website) | Marketing + documentation site | MIT | -- |
+| Repository | Description | License | CI | Activity |
+|------------|-------------|---------|-----|----------|
+| [barazo-api](https://github.com/barazo-forum/barazo-api) | AppView backend (Fastify, PostgreSQL, AT Protocol) | [![License](https://img.shields.io/github/license/barazo-forum/barazo-api?label=)](https://github.com/barazo-forum/barazo-api/blob/main/LICENSE) | [![CI](https://github.com/barazo-forum/barazo-api/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-api/actions/workflows/ci.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-api?label=)](https://github.com/barazo-forum/barazo-api/commits/main) |
+| [barazo-web](https://github.com/barazo-forum/barazo-web) | Forum frontend (Next.js, TailwindCSS) | [![License](https://img.shields.io/github/license/barazo-forum/barazo-web?label=)](https://github.com/barazo-forum/barazo-web/blob/main/LICENSE) | [![CI](https://github.com/barazo-forum/barazo-web/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-web/actions/workflows/ci.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-web?label=)](https://github.com/barazo-forum/barazo-web/commits/main) |
+| [barazo-lexicons](https://github.com/barazo-forum/barazo-lexicons) | AT Protocol schemas for forum data | [![License](https://img.shields.io/github/license/barazo-forum/barazo-lexicons?label=)](https://github.com/barazo-forum/barazo-lexicons/blob/main/LICENSE) | [![CI](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-lexicons?label=)](https://github.com/barazo-forum/barazo-lexicons/commits/main) |
+| [barazo-deploy](https://github.com/barazo-forum/barazo-deploy) | Docker Compose templates for self-hosting | [![License](https://img.shields.io/github/license/barazo-forum/barazo-deploy?label=)](https://github.com/barazo-forum/barazo-deploy/blob/main/LICENSE) | [![Validate](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml/badge.svg)](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-deploy?label=)](https://github.com/barazo-forum/barazo-deploy/commits/main) |
+| [barazo-website](https://github.com/barazo-forum/barazo-website) | Marketing + documentation site | [![License](https://img.shields.io/badge/license-proprietary-lightgrey)](https://github.com/barazo-forum/barazo-website/blob/main/LICENSE) | -- | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-website?label=)](https://github.com/barazo-forum/barazo-website/commits/main) |
 
 ---
 
@@ -137,6 +138,12 @@ Contributions are welcome. See [CONTRIBUTING.md](https://github.com/barazo-forum
 
 Contributors sign a CLA to allow future commercial licensing flexibility.
 
+### Contributors
+
+<!-- CONTRIBUTORS:START -->
+<a href="https://github.com/gxjansen"><img src="https://avatars.githubusercontent.com/u/1315685?s=80" width="80" alt="@gxjansen" /></a>
+<!-- CONTRIBUTORS:END -->
+
 ---
 
 ## Architecture
@@ -153,6 +160,7 @@ See **[ARCHITECTURE.md](https://github.com/barazo-forum/.github/blob/main/ARCHIT
 - **Frontend (barazo-web):** MIT -- Encourages customization and theming
 - **Lexicons (barazo-lexicons):** MIT -- Open standard, maximum adoption
 - **Deploy (barazo-deploy):** MIT -- Self-hosting should be freely usable
+- **Website (barazo-website):** Proprietary -- All rights reserved
 
 **Contributors sign a CLA** to allow future commercial licensing flexibility.
 
