@@ -50,20 +50,21 @@ jobs:
               `<a href="https://github.com/${c.login}"><img src="${c.avatar}&s=80" width="80" alt="@${c.login}" /></a>`
             );
 
+            const fs = require('fs');
             const md = cells.join('\n');
-            core.setOutput('markdown', md);
-            core.setOutput('count', contributors.length);
+            fs.writeFileSync('contributors-fragment.html', md);
+            console.log(`Generated ${contributors.length} contributors`);
 
       - name: Update README
         run: |
-          MARKER_START="<!-- CONTRIBUTORS:START -->"
-          MARKER_END="<!-- CONTRIBUTORS:END -->"
-          CONTRIBUTORS="${{ steps.contributors.outputs.markdown }}"
-
-          # Replace content between markers
-          awk -v start="$MARKER_START" -v end="$MARKER_END" -v content="$CONTRIBUTORS" '
-            $0 ~ start { print; print content; skip=1; next }
-            $0 ~ end { skip=0 }
+          # Replace content between markers using the generated fragment
+          awk '
+            /<!-- CONTRIBUTORS:START -->/ {
+              print
+              while ((getline line < "contributors-fragment.html") > 0) print line
+              skip=1; next
+            }
+            /<!-- CONTRIBUTORS:END -->/ { skip=0 }
             !skip { print }
           ' profile/README.md > profile/README.md.tmp
           mv profile/README.md.tmp profile/README.md
