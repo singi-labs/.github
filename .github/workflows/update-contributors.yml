@@ -1,0 +1,78 @@
+name: Update Contributors
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Weekly on Monday at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-contributors:
+    name: Update contributor avatars
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch and deduplicate contributors
+        uses: actions/github-script@v7
+        id: contributors
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const repos = ['barazo-api', 'barazo-web', 'barazo-lexicons', 'barazo-deploy', 'barazo-website'];
+            const seen = new Map();
+
+            for (const repo of repos) {
+              try {
+                const { data } = await github.rest.repos.listContributors({
+                  owner: 'barazo-forum',
+                  repo,
+                  per_page: 100,
+                });
+                for (const c of data) {
+                  if (c.type !== 'User') continue;
+                  if (!seen.has(c.login)) {
+                    seen.set(c.login, { login: c.login, avatar: c.avatar_url, contributions: 0 });
+                  }
+                  seen.get(c.login).contributions += c.contributions;
+                }
+              } catch (e) {
+                console.log(`Skipping ${repo}: ${e.message}`);
+              }
+            }
+
+            const contributors = [...seen.values()]
+              .sort((a, b) => b.contributions - a.contributions);
+
+            const cells = contributors.map(c =>
+              `<a href="https://github.com/${c.login}"><img src="${c.avatar}&s=80" width="80" alt="@${c.login}" /></a>`
+            );
+
+            const md = cells.join('\n');
+            core.setOutput('markdown', md);
+            core.setOutput('count', contributors.length);
+
+      - name: Update README
+        run: |
+          MARKER_START="<!-- CONTRIBUTORS:START -->"
+          MARKER_END="<!-- CONTRIBUTORS:END -->"
+          CONTRIBUTORS="${{ steps.contributors.outputs.markdown }}"
+
+          # Replace content between markers
+          awk -v start="$MARKER_START" -v end="$MARKER_END" -v content="$CONTRIBUTORS" '
+            $0 ~ start { print; print content; skip=1; next }
+            $0 ~ end { skip=0 }
+            !skip { print }
+          ' profile/README.md > profile/README.md.tmp
+          mv profile/README.md.tmp profile/README.md
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/README.md
+          git diff --staged --quiet && echo "No changes" && exit 0
+          git commit -m "docs: update contributor avatars [automated]"
+          git push
