@@ -141,7 +141,7 @@ Contributors sign a CLA to allow future commercial licensing flexibility.
 ### Contributors
 
 <!-- CONTRIBUTORS:START -->
-<a href="https://github.com/gxjansen"><img src="https://avatars.githubusercontent.com/u/1315685?s=80" width="80" alt="@gxjansen" /></a>
+
 <!-- CONTRIBUTORS:END -->
 
 ---
