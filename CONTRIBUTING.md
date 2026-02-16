@@ -293,8 +293,8 @@ pnpm test  # Verify nothing broke
 **Stuck? Ask for help:**
 - **GitHub Discussions** - Questions, ideas, general discussion
 - **GitHub Issues** - Bug reports, feature requests
-- **AT Protocol Discord** - `#barazo` channel (join: [link])
-- **Email** - [maintainer email TBD]
+- **AT Protocol Discord** - `#barazo` channel
+- **Email** - [hello@barazo.forum](mailto:hello@barazo.forum)
 
 ## Recognition
 
