@@ -41,7 +41,8 @@ Traditional forums lock your identity and data into each platform. Barazo uses t
 | [barazo-web](https://github.com/barazo-forum/barazo-web) | Forum frontend (Next.js, TailwindCSS) | [![License](https://img.shields.io/github/license/barazo-forum/barazo-web?label=)](https://github.com/barazo-forum/barazo-web/blob/main/LICENSE) | [![CI](https://github.com/barazo-forum/barazo-web/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-web/actions/workflows/ci.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-web?label=)](https://github.com/barazo-forum/barazo-web/commits/main) |
 | [barazo-lexicons](https://github.com/barazo-forum/barazo-lexicons) | AT Protocol schemas for forum data | [![License](https://img.shields.io/github/license/barazo-forum/barazo-lexicons?label=)](https://github.com/barazo-forum/barazo-lexicons/blob/main/LICENSE) | [![CI](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-lexicons?label=)](https://github.com/barazo-forum/barazo-lexicons/commits/main) |
 | [barazo-deploy](https://github.com/barazo-forum/barazo-deploy) | Docker Compose templates for self-hosting | [![License](https://img.shields.io/github/license/barazo-forum/barazo-deploy?label=)](https://github.com/barazo-forum/barazo-deploy/blob/main/LICENSE) | [![Validate](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml/badge.svg)](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-deploy?label=)](https://github.com/barazo-forum/barazo-deploy/commits/main) |
-| [barazo-website](https://github.com/barazo-forum/barazo-website) | Marketing + documentation site | [![License](https://img.shields.io/badge/license-proprietary-lightgrey)](https://github.com/barazo-forum/barazo-website/blob/main/LICENSE) | -- | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-website?label=)](https://github.com/barazo-forum/barazo-website/commits/main) |
+| [barazo-website](https://github.com/barazo-forum/barazo-website) | Marketing site (Astro) | [![License](https://img.shields.io/github/license/barazo-forum/barazo-website?label=)](https://github.com/barazo-forum/barazo-website/blob/main/LICENSE) | -- | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-website?label=)](https://github.com/barazo-forum/barazo-website/commits/main) |
+| [barazo-docs](https://github.com/barazo-forum/barazo-docs) | Documentation site (Fumadocs) | [![License](https://img.shields.io/github/license/barazo-forum/barazo-docs?label=)](https://github.com/barazo-forum/barazo-docs/blob/main/LICENSE) | -- | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-docs?label=)](https://github.com/barazo-forum/barazo-docs/commits/main) |
 
 ---
 
@@ -126,6 +127,8 @@ Traditional forums lock your identity and data into each platform. Barazo uses t
 | Runtime | Node.js 24 LTS, TypeScript |
 | Backend | Fastify, Drizzle ORM, PostgreSQL 16, Valkey |
 | Frontend | Next.js 16, React 19, TailwindCSS, shadcn/ui |
+| Docs | Fumadocs (Next.js), fumadocs-openapi, Orama search |
+| Marketing | Astro (static-first, islands architecture) |
 | Protocol | AT Protocol SDK (@atproto/api, @atproto/tap) |
 | Hosting | Docker Compose, Hetzner VPS, Bunny.net CDN |
 | Monitoring | GlitchTip, Pino, Grafana (Phase 3) |
@@ -160,7 +163,8 @@ See **[ARCHITECTURE.md](https://github.com/barazo-forum/.github/blob/main/ARCHIT
 - **Frontend (barazo-web):** MIT -- Encourages customization and theming
 - **Lexicons (barazo-lexicons):** MIT -- Open standard, maximum adoption
 - **Deploy (barazo-deploy):** MIT -- Self-hosting should be freely usable
-- **Website (barazo-website):** Proprietary -- All rights reserved
+- **Website (barazo-website):** MIT -- Marketing site
+- **Docs (barazo-docs):** MIT -- Documentation should be freely usable
 
 **Contributors sign a CLA** to allow future commercial licensing flexibility.
 
