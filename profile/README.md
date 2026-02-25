@@ -157,14 +157,12 @@ See **[ARCHITECTURE.md](https://github.com/barazo-forum/.github/blob/main/ARCHIT
 
 ## License
 
-**Dual-licensed for openness and sustainability:**
-
-- **Backend (barazo-api):** AGPL-3.0 -- Protects the core, competitors must share changes
-- **Frontend (barazo-web):** MIT -- Encourages customization and theming
-- **Lexicons (barazo-lexicons):** MIT -- Open standard, maximum adoption
-- **Deploy (barazo-deploy):** MIT -- Self-hosting should be freely usable
-- **Website (barazo-website):** Proprietary -- All rights reserved
-- **Docs (barazo-docs):** MIT (code) + CC BY-SA 4.0 (content) -- Code reusable, docs freely shareable with attribution
+- **Backend (barazo-api):** AGPL-3.0
+- **Frontend (barazo-web):** MIT
+- **Lexicons (barazo-lexicons):** MIT
+- **Deploy (barazo-deploy):** MIT
+- **Website (barazo-website):** Proprietary
+- **Docs (barazo-docs):** MIT (code) + CC BY-SA 4.0 (content)
 
 **Contributors sign a CLA** to allow future commercial licensing flexibility.
 
