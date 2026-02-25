@@ -164,7 +164,7 @@ See **[ARCHITECTURE.md](https://github.com/barazo-forum/.github/blob/main/ARCHIT
 - **Lexicons (barazo-lexicons):** MIT -- Open standard, maximum adoption
 - **Deploy (barazo-deploy):** MIT -- Self-hosting should be freely usable
 - **Website (barazo-website):** Proprietary -- All rights reserved
-- **Docs (barazo-docs):** {TBD -- see below}
+- **Docs (barazo-docs):** MIT (code) + CC BY-SA 4.0 (content) -- Code reusable, docs freely shareable with attribution
 
 **Contributors sign a CLA** to allow future commercial licensing flexibility.
 
