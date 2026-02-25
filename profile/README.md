@@ -42,7 +42,7 @@ Traditional forums lock your identity and data into each platform. Barazo uses t
 | [barazo-lexicons](https://github.com/barazo-forum/barazo-lexicons) | AT Protocol schemas for forum data | [![License](https://img.shields.io/github/license/barazo-forum/barazo-lexicons?label=)](https://github.com/barazo-forum/barazo-lexicons/blob/main/LICENSE) | [![CI](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-lexicons?label=)](https://github.com/barazo-forum/barazo-lexicons/commits/main) |
 | [barazo-deploy](https://github.com/barazo-forum/barazo-deploy) | Docker Compose templates for self-hosting | [![License](https://img.shields.io/github/license/barazo-forum/barazo-deploy?label=)](https://github.com/barazo-forum/barazo-deploy/blob/main/LICENSE) | [![Validate](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml/badge.svg)](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-deploy?label=)](https://github.com/barazo-forum/barazo-deploy/commits/main) |
 | [barazo-website](https://github.com/barazo-forum/barazo-website) | Marketing site (Astro) | [![License](https://img.shields.io/badge/license-proprietary-lightgrey)](https://github.com/barazo-forum/barazo-website/blob/main/LICENSE) | -- | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-website?label=)](https://github.com/barazo-forum/barazo-website/commits/main) |
-| [barazo-docs](https://github.com/barazo-forum/barazo-docs) | Documentation site (Fumadocs) | [![License](https://img.shields.io/github/license/barazo-forum/barazo-docs?label=)](https://github.com/barazo-forum/barazo-docs/blob/main/LICENSE) | -- | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-docs?label=)](https://github.com/barazo-forum/barazo-docs/commits/main) |
+| [barazo-docs](https://github.com/barazo-forum/barazo-docs) | Documentation site (Fumadocs) | [![License](https://img.shields.io/badge/license-CC%20BY--SA%204.0-lightgrey)](https://github.com/barazo-forum/barazo-docs/blob/main/LICENSE) | -- | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-docs?label=)](https://github.com/barazo-forum/barazo-docs/commits/main) |
 
 ---
 
@@ -162,7 +162,7 @@ See **[ARCHITECTURE.md](https://github.com/barazo-forum/.github/blob/main/ARCHIT
 - **Lexicons (barazo-lexicons):** MIT
 - **Deploy (barazo-deploy):** MIT
 - **Website (barazo-website):** Proprietary
-- **Docs (barazo-docs):** MIT (code) + CC BY-SA 4.0 (content)
+- **Docs (barazo-docs):** CC BY-SA 4.0 (content) + MIT (code)
 
 **Contributors sign a CLA** to allow future commercial licensing flexibility.
 
