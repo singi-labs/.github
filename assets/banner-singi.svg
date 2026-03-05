@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100%" height="100%" viewBox="0 0 1280 320" version="1.1" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <rect x="0" y="0" width="1280" height="320" style="fill:#1C1B1A;"/>
+    <!-- Network graph -->
+    <g opacity="0.25">
+        <path d="M100,50L180,90" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M180,90L140,170" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M140,170L70,240" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M100,50L260,120" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M260,120L340,70" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M180,90L260,120" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M340,70L420,160" style="fill:none;stroke:#8B7EC8;stroke-width:0.8px;"/>
+        <path d="M260,120L360,220" style="fill:none;stroke:#8B7EC8;stroke-width:0.8px;"/>
+        <path d="M140,170L220,260" style="fill:none;stroke:#8B7EC8;stroke-width:0.8px;"/>
+        <path d="M420,160L520,100" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M520,100L600,180" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M600,180L700,140" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M700,140L780,220" style="fill:none;stroke:#8B7EC8;stroke-width:0.8px;"/>
+        <path d="M520,100L640,60" style="fill:none;stroke:#8B7EC8;stroke-width:0.8px;"/>
+        <path d="M880,70L960,130" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M960,130L1040,90" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M1040,90L1130,170" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M1130,170L1200,230" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M960,130L1130,170" style="fill:none;stroke:#DA702C;stroke-width:0.8px;"/>
+        <path d="M880,70L1040,90" style="fill:none;stroke:#8B7EC8;stroke-width:0.8px;"/>
+        <path d="M1040,230L1130,170" style="fill:none;stroke:#8B7EC8;stroke-width:0.8px;"/>
+        <path d="M780,220L880,70" style="fill:none;stroke:#8B7EC8;stroke-width:0.8px;"/>
+    </g>
+    <!-- Node decorations -->
+    <g opacity="0.4">
+        <g transform="translate(100,50)"><g transform="scale(0.15)"><circle cx="0" cy="0" r="30" style="fill:none;stroke:#8B7EC8;stroke-width:8px;"/><circle cx="0" cy="0" r="12" style="fill:#8B7EC8;"/><path d="M25,-8C31.667,-8 35,-2.667 35,8L35,22" style="fill:none;stroke:#8B7EC8;stroke-width:8px;"/></g></g>
+        <circle cx="180" cy="90" r="7" style="fill:none;stroke:#8B7EC8;stroke-width:2px;"/>
+        <g transform="translate(140,170)"><g transform="scale(0.15)"><circle cx="0" cy="0" r="30" style="fill:none;stroke:#8B7EC8;stroke-width:8px;"/><circle cx="0" cy="0" r="12" style="fill:#8B7EC8;"/><path d="M25,-8C31.667,-8 35,-2.667 35,8L35,22" style="fill:none;stroke:#8B7EC8;stroke-width:8px;"/></g></g>
+        <circle cx="340" cy="70" r="7" style="fill:none;stroke:#8B7EC8;stroke-width:2px;"/>
+        <g transform="translate(520,100)"><g transform="scale(0.15)"><circle cx="0" cy="0" r="30" style="fill:none;stroke:#8B7EC8;stroke-width:8px;"/><circle cx="0" cy="0" r="12" style="fill:#8B7EC8;"/><path d="M25,-8C31.667,-8 35,-2.667 35,8L35,22" style="fill:none;stroke:#8B7EC8;stroke-width:8px;"/></g></g>
+        <circle cx="700" cy="140" r="7" style="fill:none;stroke:#8B7EC8;stroke-width:2px;"/>
+        <g transform="translate(880,70)"><g transform="scale(0.15)"><circle cx="0" cy="0" r="30" style="fill:none;stroke:#8B7EC8;stroke-width:8px;"/><circle cx="0" cy="0" r="12" style="fill:#8B7EC8;"/><path d="M25,-8C31.667,-8 35,-2.667 35,8L35,22" style="fill:none;stroke:#8B7EC8;stroke-width:8px;"/></g></g>
+        <circle cx="1040" cy="90" r="7" style="fill:none;stroke:#8B7EC8;stroke-width:2px;"/>
+        <g transform="translate(1200,230)"><g transform="scale(0.15)"><circle cx="0" cy="0" r="30" style="fill:none;stroke:#8B7EC8;stroke-width:8px;"/><circle cx="0" cy="0" r="12" style="fill:#8B7EC8;"/><path d="M25,-8C31.667,-8 35,-2.667 35,8L35,22" style="fill:none;stroke:#8B7EC8;stroke-width:8px;"/></g></g>
+        <g transform="translate(70,240)"><path d="M-7,0L7,0" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/><path d="M0,-7L0,7" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/></g>
+        <circle cx="260" cy="120" r="7" style="fill:none;stroke:#8B7EC8;stroke-width:2px;"/>
+        <g transform="translate(220,260)"><path d="M-7,0L7,0" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/><path d="M0,-7L0,7" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/></g>
+        <circle cx="360" cy="220" r="7" style="fill:none;stroke:#8B7EC8;stroke-width:2px;"/>
+        <g transform="translate(420,160)"><path d="M-7,0L7,0" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/><path d="M0,-7L0,7" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/></g>
+        <circle cx="600" cy="180" r="7" style="fill:none;stroke:#8B7EC8;stroke-width:2px;"/>
+        <g transform="translate(640,60)"><path d="M-7,0L7,0" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/><path d="M0,-7L0,7" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/></g>
+        <circle cx="780" cy="220" r="7" style="fill:none;stroke:#8B7EC8;stroke-width:2px;"/>
+        <g transform="translate(960,130)"><path d="M-7,0L7,0" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/><path d="M0,-7L0,7" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/></g>
+        <circle cx="1130" cy="170" r="7" style="fill:none;stroke:#8B7EC8;stroke-width:2px;"/>
+        <g transform="translate(1040,230)"><path d="M-7,0L7,0" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/><path d="M0,-7L0,7" style="fill:none;stroke:#8B7EC8;stroke-width:2.5px;stroke-linecap:round;"/></g>
+    </g>
+    <!-- Text -->
+    <g>
+        <g transform="translate(80,145)">
+            <text x="0" y="0" style="font-family:'Helvetica-Bold','Helvetica','Arial',sans-serif;font-weight:700;font-size:76px;fill:#FFFCF0;">Singi Labs</text>
+        </g>
+        <g transform="translate(80,195)">
+            <text x="0" y="0" style="font-family:'Helvetica','Arial',sans-serif;font-size:28px;fill:#FFFCF0;">Open community infrastructure for the decentralized web</text>
+        </g>
+        <rect x="80" y="210" width="140" height="2" style="fill:#DA702C;fill-opacity:0.6;"/>
+    </g>
+    <!-- Logo: Singi Labs (orange AT + squares + dots) -->
+    <g transform="matrix(0.4935,0,0,0.4935,988.698,25.583)">
+        <path d="M128,71.5C159.183,71.5 184.5,96.817 184.5,128C184.5,159.183 159.183,184.5 128,184.5C96.817,184.5 71.5,159.183 71.5,128C71.5,96.817 96.817,71.5 128,71.5ZM128,104.5C115.03,104.5 104.5,115.03 104.5,128C104.5,140.97 115.03,151.5 128,151.5C140.97,151.5 151.5,140.97 151.5,128C151.5,115.03 140.97,104.5 128,104.5Z" style="fill:#DA702C;"/>
+    </g>
+    <g transform="matrix(0.4935,0,0,0.4935,988.698,25.583)">
+        <path d="M174.866,194.259C182.45,189.218 192.7,191.282 197.741,198.866C202.782,206.45 200.718,216.7 193.134,221.741C175.432,233.507 150.846,240.5 128,240.5C66.284,240.5 15.5,189.716 15.5,128C15.5,66.284 66.284,15.5 128,15.5C189.716,15.5 240.5,66.284 240.5,128C240.5,160.538 225.46,184.5 196,184.5C166.54,184.5 151.5,160.538 151.5,128L151.5,88C151.5,78.893 158.893,71.5 168,71.5C177.107,71.5 184.5,78.893 184.5,88L184.5,128C184.5,134.408 185.237,140.363 187.279,145.164C188.851,148.858 191.536,151.5 196,151.5C200.464,151.5 203.149,148.858 204.721,145.164C206.763,140.363 207.5,134.408 207.5,128C207.5,84.388 171.612,48.5 128,48.5C84.388,48.5 48.5,84.388 48.5,128C48.5,171.612 84.388,207.5 128,207.5C144.415,207.5 162.148,202.713 174.866,194.259Z" style="fill:#DA702C;"/>
+    </g>
+    <!-- Top-right quadrant: rounded square -->
+    <g transform="matrix(1.4805,0,0,1.4805,933.056,-29.689)">
+        <rect x="148" y="51.75" width="56" height="56" rx="10" style="fill:none;stroke:#FFFCF0;stroke-width:12px;"/>
+    </g>
+    <!-- Bottom-left quadrant: rounded square -->
+    <g transform="matrix(1.4805,0,0,1.4805,933.056,-29.319)">
+        <rect x="52" y="148" width="56" height="56" rx="10" style="fill:none;stroke:#FFFCF0;stroke-width:12px;"/>
+    </g>
+    <!-- Bottom-right: three dots -->
+    <g transform="matrix(1.4805,0,0,1.4805,933.056,-29.319)">
+        <circle cx="176" cy="156" r="10" style="fill:#8B7EC8;"/>
+        <circle cx="158" cy="192" r="10" style="fill:#8B7EC8;"/>
+        <circle cx="194" cy="192" r="10" style="fill:#8B7EC8;"/>
+    </g>
+</svg>
