@@ -79,4 +79,4 @@ Contributions are welcome. See [CONTRIBUTING.md](https://github.com/singi-labs/.
 
 ---
 
-**Singi Labs** -- from Swahili *msingi*, meaning foundation.
+**Singi Labs** -- from Swahili *msingi* (foundation). **Barazo** from *baraza* (community council). **Sifa** from *sifa* (praise, reputation).
