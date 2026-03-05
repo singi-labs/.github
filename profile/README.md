@@ -1,145 +1,64 @@
-![Barazo Banner](https://raw.githubusercontent.com/barazo-forum/.github/main/assets/banner.jpg)
+![Singi Labs](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-singi.svg)
 
-[![Status: Alpha](https://img.shields.io/badge/status-alpha-orange)]()
-[![GitHub Org Stars](https://img.shields.io/github/stars/barazo-forum?style=flat&label=org%20stars)](https://github.com/barazo-forum)
-[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://opensource.org/licenses/AGPL-3.0)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+**Open community infrastructure for the decentralized web.**
 
----
+We build open source software on the [AT Protocol](https://atproto.com). Portable identity, user-owned data, no surveillance.
 
-## What is Barazo?
+Built in the Netherlands. Hosted in the EU.
 
-Barazo is a modern forum platform that gives users **portable identity and data ownership**:
-
-- **One account, all forums** -- Use your AT Protocol identity (Bluesky, etc.) everywhere
-- **Your data, your control** -- Content lives on your Personal Data Server, not locked in each forum
-- **Cross-forum reputation** -- Your contributions follow you across every Barazo instance
-- **Open source** -- AGPL backend, MIT frontend. Self-host or use managed hosting.
-- **Privacy-first** -- EU-hosted, GDPR-compliant, no tracking, no ads
-
-**The Discourse/Flarum alternative for the decentralized web.**
+[![GitHub Org Stars](https://img.shields.io/github/stars/singi-labs?style=flat&label=org%20stars)](https://github.com/singi-labs)
+[![Website](https://img.shields.io/badge/singi.dev-website-DA702C)](https://singi.dev)
 
 ---
 
-## Why AT Protocol?
+## Products
 
-Traditional forums lock your identity and data into each platform. Barazo uses the AT Protocol to give you:
+![Barazo](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-barazo.svg)
 
-- **Portable identity** -- One login across all Barazo forums
-- **Data ownership** -- Your posts live on your PDS, not the forum's database
-- **Cross-forum features** -- Reputation, search, aggregation across instances
-- **No vendor lock-in** -- Migrate forums without losing users or content
-- **Federated moderation** -- AT Protocol labelers work across all forums
+Federated forums on the AT Protocol. Self-hostable. One account works across every Barazo forum and Bluesky. Your posts live on your Personal Data Server, not locked inside any single platform.
 
----
+**Status:** Alpha (Phase 2 complete)
+**License:** AGPL-3.0 (backend) + MIT (frontend, lexicons, deploy)
 
-## Repositories
+| Repository | Description |
+|------------|-------------|
+| [barazo-api](https://github.com/singi-labs/barazo-api) | AppView backend (Fastify, PostgreSQL, AT Protocol) |
+| [barazo-web](https://github.com/singi-labs/barazo-web) | Forum frontend (Next.js, React, TailwindCSS) |
+| [barazo-lexicons](https://github.com/singi-labs/barazo-lexicons) | AT Protocol schema definitions |
+| [barazo-deploy](https://github.com/singi-labs/barazo-deploy) | Docker Compose templates for self-hosting |
+| [barazo-website](https://github.com/singi-labs/barazo-website) | Marketing site |
+| [barazo-docs](https://github.com/singi-labs/barazo-docs) | Documentation site |
 
-| Repository | Description | License | CI | Activity |
-|------------|-------------|---------|-----|----------|
-| [barazo-api](https://github.com/barazo-forum/barazo-api) | AppView backend (Fastify, PostgreSQL, AT Protocol) | [![License](https://img.shields.io/github/license/barazo-forum/barazo-api?label=)](https://github.com/barazo-forum/barazo-api/blob/main/LICENSE) | [![CI](https://github.com/barazo-forum/barazo-api/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-api/actions/workflows/ci.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-api?label=)](https://github.com/barazo-forum/barazo-api/commits/main) |
-| [barazo-web](https://github.com/barazo-forum/barazo-web) | Forum frontend (Next.js, TailwindCSS) | [![License](https://img.shields.io/github/license/barazo-forum/barazo-web?label=)](https://github.com/barazo-forum/barazo-web/blob/main/LICENSE) | [![CI](https://github.com/barazo-forum/barazo-web/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-web/actions/workflows/ci.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-web?label=)](https://github.com/barazo-forum/barazo-web/commits/main) |
-| [barazo-lexicons](https://github.com/barazo-forum/barazo-lexicons) | AT Protocol schemas for forum data | [![License](https://img.shields.io/github/license/barazo-forum/barazo-lexicons?label=)](https://github.com/barazo-forum/barazo-lexicons/blob/main/LICENSE) | [![CI](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml/badge.svg)](https://github.com/barazo-forum/barazo-lexicons/actions/workflows/ci.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-lexicons?label=)](https://github.com/barazo-forum/barazo-lexicons/commits/main) |
-| [barazo-deploy](https://github.com/barazo-forum/barazo-deploy) | Docker Compose templates for self-hosting | [![License](https://img.shields.io/github/license/barazo-forum/barazo-deploy?label=)](https://github.com/barazo-forum/barazo-deploy/blob/main/LICENSE) | [![Validate](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml/badge.svg)](https://github.com/barazo-forum/barazo-deploy/actions/workflows/validate-compose.yml) | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-deploy?label=)](https://github.com/barazo-forum/barazo-deploy/commits/main) |
-| [barazo-website](https://github.com/barazo-forum/barazo-website) | Marketing site (Astro) | [![License](https://img.shields.io/badge/license-proprietary-lightgrey)](https://github.com/barazo-forum/barazo-website/blob/main/LICENSE) | -- | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-website?label=)](https://github.com/barazo-forum/barazo-website/commits/main) |
-| [barazo-docs](https://github.com/barazo-forum/barazo-docs) | Documentation site (Fumadocs) | [![License](https://img.shields.io/badge/license-CC%20BY--SA%204.0-lightgrey)](https://github.com/barazo-forum/barazo-docs/blob/main/LICENSE) | -- | [![Last Commit](https://img.shields.io/github/last-commit/barazo-forum/barazo-docs?label=)](https://github.com/barazo-forum/barazo-docs/commits/main) |
+[barazo.forum](https://barazo.forum) | [Documentation](https://docs.barazo.forum)
 
----
+![Sifa](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-sifa.svg)
 
-## Features
+Professional identity and reputation on the AT Protocol. Your contributions across AT Protocol apps build a portable reputation that follows you everywhere.
 
-**Core forum:**
-- Topics, replies (threaded), categories, reactions (configurable per forum)
-- Markdown editor and rendering (sanitized)
-- Full-text search (PostgreSQL tsvector + GIN)
-- Content maturity filtering (SFW/Mature/Adult at forum + category level)
-- Moderation tools (lock, pin, delete, ban, content reporting, word/link blocklists)
-- Notifications (in-app + email)
-- User profiles with PDS sync, user preferences (global + per-community)
-- Self-labels on posts (AT Protocol selfLabels)
-- Age gate (self-declaration), block/mute users (portable via PDS)
-- Admin-configurable onboarding fields per community
+**Status:** In development
 
-**AT Protocol integration:**
-- OAuth sign-in with any AT Protocol PDS (Bluesky, self-hosted, etc.)
-- Firehose subscription via Tap (filtered for `forum.barazo.*`)
-- Cross-posting to Bluesky (default ON, toggleable) and Frontpage (feature flag)
-- Rich OpenGraph images for cross-posts with forum branding
-- Global aggregator mode (cross-community feed with maturity filtering)
-- Cross-community reputation (activity counts across forums)
-
-**Infrastructure:**
-- Docker Compose deployment (dev, production, global aggregator profiles)
-- Caddy reverse proxy with automatic SSL
-- CI/CD with GitHub Actions (lint, typecheck, tests, a11y audit, CodeQL)
-- Dependabot security monitoring, backup/restore scripts
-
-**Quality:**
-- WCAG 2.2 AA accessibility compliance (vitest-axe + @axe-core/playwright)
-- Strict TypeScript (no `any`, no `@ts-ignore`)
-- Test-driven development across all repos
+[sifa.work](https://sifa.work)
 
 ---
 
-## Planned Features
+## Principles
 
-- Stripe billing / SaaS multi-tenant / custom domains (P3)
-- Plugin system with admin UI (P3)
-- AI features: semantic search, AI moderation, summarization, translation (P4)
-- Private categories, AT Protocol labeler integration (P4)
-- Legacy forum migration tools (Discourse, Flarum, phpBB) (P5)
-- Marketing website, PWA (P5)
+- **Portable identity** -- One account, everywhere
+- **User-owned data** -- Your content lives on your PDS
+- **Open source** -- Inspect, modify, self-host
+- **No surveillance** -- No ads, no tracking, ever
 
 ---
 
-## Roadmap
+## Tech stack
 
-**Phase 1: Core MVP** -- Done
-- Auth, topics, replies, categories, search, moderation, reactions
-- Cross-posting (Bluesky + Frontpage), notifications, user profiles
-- Frontend (20 pages, 28 components), Docker Compose deployment
-
-**Phase 2: User Experience + Global** -- Done
-- P2.1: Content maturity, self-labels, age gate, user preferences
-- P2.2: Global aggregator, cross-community reputation, block/mute
-- P2.3: Age declaration revision, community onboarding fields
-
-**Phase 3: SaaS Infrastructure**
-- Stripe billing, multi-tenant support, custom domain automation
-- Plugin system (core plugins + admin UI)
-- GlitchTip error monitoring
-
-**Phase 4: AI Features**
-- Semantic search (pgvector hybrid ranking)
-- AI-assisted moderation, topic summarization, translation
-- AT Protocol labeler integration, private categories
-
-**Phase 5: Migration and Launch**
-- Legacy forum migration tools, marketing site
-- Security audit, WCAG 2.2 AA audit, PWA
-
----
-
-## Tech Stack
-
-| Component | Technology |
-|-----------|-----------|
-| Runtime | Node.js 24 LTS, TypeScript |
-| Backend | Fastify, Drizzle ORM, PostgreSQL 16, Valkey |
-| Frontend | Next.js 16, React 19, TailwindCSS, shadcn/ui |
-| Docs | Fumadocs (Next.js), fumadocs-openapi, Orama search |
-| Marketing | Astro (static-first, islands architecture) |
-| Protocol | AT Protocol SDK (@atproto/api, @atproto/tap) |
-| Hosting | Docker Compose, Hetzner VPS, Bunny.net CDN |
-| Monitoring | GlitchTip, Pino, Grafana (Phase 3) |
+TypeScript / Node.js 24 / Fastify / PostgreSQL 16 / Next.js / React 19 / TailwindCSS / AT Protocol
 
 ---
 
 ## Contributing
 
-Contributions are welcome. See [CONTRIBUTING.md](https://github.com/barazo-forum/.github/blob/main/CONTRIBUTING.md) for guidelines.
-
-Contributors sign a CLA to allow future commercial licensing flexibility.
+Contributions are welcome. See [CONTRIBUTING.md](https://github.com/singi-labs/.github/blob/main/CONTRIBUTING.md) for guidelines.
 
 ### Contributors
 
@@ -149,34 +68,15 @@ Contributors sign a CLA to allow future commercial licensing flexibility.
 
 ---
 
-## Architecture
+## Links
 
-See **[ARCHITECTURE.md](https://github.com/barazo-forum/.github/blob/main/ARCHITECTURE.md)** for the full system architecture, including data flow diagrams, deployment layout, and operating modes.
-
----
-
-## License
-
-- **Backend (barazo-api):** AGPL-3.0
-- **Frontend (barazo-web):** MIT
-- **Lexicons (barazo-lexicons):** MIT
-- **Deploy (barazo-deploy):** MIT
-- **Website (barazo-website):** Proprietary
-- **Docs (barazo-docs):** CC BY-SA 4.0 (content) + MIT (code)
-
-**Contributors sign a CLA** to allow future commercial licensing flexibility.
+- [singi.dev](https://singi.dev) -- Organization homepage
+- [barazo.forum](https://barazo.forum) -- Barazo marketing site
+- [docs.barazo.forum](https://docs.barazo.forum) -- Barazo documentation
+- [sifa.work](https://sifa.work) -- Sifa (coming soon)
+- [GitHub Discussions](https://github.com/orgs/singi-labs/discussions)
+- [Bluesky](https://bsky.app/profile/barazo.forum) -- @barazo.forum
 
 ---
 
-## Community
-
-- **Website:** [barazo.forum](https://barazo.forum)
-- **Discussions:** [GitHub Discussions](https://github.com/orgs/barazo-forum/discussions)
-- **Bluesky:** [@barazo.forum](https://bsky.app/profile/barazo.forum)
-- **Contact:** [@gxjansen](https://github.com/gxjansen)
-
----
-
-**Barazo** -- Forums for the open web
-
-(c) 2026 Barazo. AGPL-3.0 (backend) + MIT (frontend/lexicons/deploy).
+**Singi Labs** -- from Swahili *msingi*, meaning foundation.
