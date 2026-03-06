@@ -6,7 +6,7 @@ We build open source software on the [AT Protocol](https://atproto.com). Portabl
 
 Built with 🧡 in 🇪🇺.
 
-[![GitHub Org Stars](https://img.shields.io/github/stars/singi-labs?style=flat&label=org%20stars)](https://github.com/singi-labs)
+[![GitHub Org Stars](https://img.shields.io/github/stars/singi-labs?style=flat&label=total%20org%20stars)](https://github.com/singi-labs)
 [![Website](https://img.shields.io/badge/singi.dev-website-DA702C)](https://singi.dev)
 
 ---
