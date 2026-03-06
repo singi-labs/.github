@@ -23,12 +23,12 @@ This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.
    # Click "Fork" on GitHub, then:
    git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
    cd REPO_NAME
-   git remote add upstream https://github.com/barazo-forum/REPO_NAME.git
+   git remote add upstream https://github.com/singi-labs/REPO_NAME.git
    ```
 
 2. **Clone directly** (if team member)
    ```bash
-   git clone https://github.com/barazo-forum/REPO_NAME.git
+   git clone https://github.com/singi-labs/REPO_NAME.git
    cd REPO_NAME
    ```
 

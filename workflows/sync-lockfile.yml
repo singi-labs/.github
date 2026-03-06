@@ -1,0 +1,74 @@
+name: Sync Lockfile
+
+on:
+  repository_dispatch:
+    types: [sync-lockfile]
+  schedule:
+    # Hourly fallback -- catches Dependabot merges and edge cases
+    - cron: "0 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    name: Regenerate workspace lockfile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout workspace
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+
+      - name: Fetch workspace member manifests
+        run: |
+          for pkg in barazo-api barazo-web barazo-lexicons; do
+            mkdir -p "$pkg"
+            curl -sfL "https://raw.githubusercontent.com/singi-labs/$pkg/main/package.json" \
+              -o "$pkg/package.json"
+          done
+
+      - name: Regenerate lockfile
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Check for lockfile changes
+        id: diff
+        run: |
+          if git diff --quiet pnpm-lock.yaml; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Lockfile is already up to date."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Lockfile has changed -- needs update."
+            git diff --stat pnpm-lock.yaml
+          fi
+
+      - name: Commit lockfile to main
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pnpm-lock.yaml
+          git commit -m "fix(deps): auto-sync lockfile with sub-repo dependencies"
+          git push origin main
+
+      - name: Trigger staging re-deploy
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697 # v4.0.1
+        with:
+          token: ${{ secrets.DEPLOY_PAT }}
+          repository: singi-labs/barazo-deploy
+          event-type: deploy-staging
+          client-payload: |
+            {
+              "trigger_repo": "barazo-workspace",
+              "api_ref": "main",
+              "web_ref": "main"
+            }

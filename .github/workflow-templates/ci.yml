@@ -9,7 +9,7 @@ on:
 
 jobs:
   ci:
-    uses: barazo-forum/.github/.github/workflows/reusable-ci.yml@main
+    uses: singi-labs/.github/.github/workflows/reusable-ci.yml@main
     with:
       node-version: "24"
       run-build: true

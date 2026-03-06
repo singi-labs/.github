@@ -27,7 +27,7 @@ jobs:
             for (const repo of repos) {
               try {
                 const { data } = await github.rest.repos.listContributors({
-                  owner: 'barazo-forum',
+                  owner: 'singi-labs',
                   repo,
                   per_page: 100,
                 });
