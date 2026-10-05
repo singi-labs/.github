@@ -1,0 +1,52 @@
+name: Jev issue pre-classification
+description: >-
+  Asks Jev (TypeSafe System One) the batched issue-triage questions from
+  @singi-labs/sifa-sdk/jev/issue and writes advisory label suggestions for a
+  gh-aw issue-triage agent. Shadow mode: never applies labels, never fails
+  the job. Any problem becomes an ok:false output and exit 0.
+
+inputs:
+  typesafe-api-key:
+    description: TypeSafe API key (repo secret). Never logged.
+    required: true
+  sdk-version:
+    description: Exact @singi-labs/sifa-sdk version that provides jev/issue.
+    required: false
+    default: '0.19.81'
+  typesafe-sdk-version:
+    description: Exact @typesafe-ai/sdk version.
+    required: false
+    default: '0.6.0'
+  model:
+    description: Jev model id.
+    required: false
+    default: jev-latest
+  out-path:
+    description: Where the JSON suggestions are written (mounted into the gh-aw agent container).
+    required: false
+    default: /tmp/gh-aw/jev-triage.json
+
+runs:
+  using: composite
+  steps:
+    - name: Install Jev triage dependencies
+      shell: bash
+      env:
+        SDK_VERSION: ${{ inputs.sdk-version }}
+        TS_VERSION: ${{ inputs.typesafe-sdk-version }}
+      run: |
+        set -euo pipefail
+        dir="${RUNNER_TEMP}/jev-issue-triage"
+        mkdir -p "$dir"
+        cd "$dir"
+        [ -f package.json ] || printf '{"name":"jev-issue-triage","private":true,"type":"module"}\n' > package.json
+        npm install --no-audit --no-fund --silent \
+          "@singi-labs/sifa-sdk@${SDK_VERSION}" "@typesafe-ai/sdk@${TS_VERSION}"
+        cp "${GITHUB_ACTION_PATH}/triage.mjs" "$dir/triage.mjs"
+    - name: Jev pre-classification
+      shell: bash
+      env:
+        TYPESAFE_API_KEY: ${{ inputs.typesafe-api-key }}
+        JEV_MODEL: ${{ inputs.model }}
+        JEV_TRIAGE_OUT: ${{ inputs.out-path }}
+      run: node "${RUNNER_TEMP}/jev-issue-triage/triage.mjs"
