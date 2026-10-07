@@ -166,7 +166,7 @@
 - Validated in CI via GitHub Actions
 
 ### Pre-push Validation
-- Pre-push hook runs `lint && typecheck && build && test` before allowing push
+- Pre-push hook runs `lint && typecheck && build` before allowing push (sifa-sdk: build only). The full test suite runs in CI, where it is a required check.
 - Catches CI failures locally before they reach GitHub Actions
 
 ### Worktree Isolation (Multi-Session Safety)
