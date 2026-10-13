@@ -23,6 +23,7 @@ repo's `AGENTS.md` rather than copied:
 | [`standards/frontend.md`](standards/frontend.md) | Frontend patterns, accessibility, components |
 | [`standards/atproto-conventions.md`](standards/atproto-conventions.md) | AT Protocol conventions |
 | [`standards/naming-lexicon.md`](standards/naming-lexicon.md) | Lexicon naming rules |
+| [`standards/sifa-records.md`](standards/sifa-records.md) | Sifa lexicon fields, record writes and ingestion |
 | [`standards/quality-measures.md`](standards/quality-measures.md) | Quality, security & reliability overview |
 | [`standards/readme-template.md`](standards/readme-template.md) | README template for repos |
 
