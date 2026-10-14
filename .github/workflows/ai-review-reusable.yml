@@ -125,7 +125,11 @@ jobs:
           # awk drops each `diff --git ... b/<path>` section whose path is a
           # lockfile or snapshot; everything else (incl. .github/ and docs) is
           # kept. A PR that changes ONLY trivial files is already skipped above.
-          gh pr diff "$PR" --patch | awk '
+          # The net diff, not --patch: --patch emits every commit separately, so
+          # a multi-commit PR was reviewed largely on superseded commits and hit
+          # the size cap before the final code (sifa-sdk#810: 1.6M characters of
+          # commit history versus a 105k net diff).
+          gh pr diff "$PR" | awk '
             /^diff --git / { p = $0; sub(/^diff --git a\/.* b\//, "", p);
               drop = (p ~ /(\.lock|lock\.json|lock\.ya?ml|\.snap)$/) }
             !drop' > diff.patch
