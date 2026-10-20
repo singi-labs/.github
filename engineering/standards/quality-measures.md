@@ -44,7 +44,7 @@
 
 ### Unit Tests (Vitest)
 - All business logic has unit tests
-- Test files co-located with source (`foo.ts` -> `foo.test.ts`)
+- Test files follow the repo's existing layout: next to the source (`foo.ts` -> `foo.test.ts`) or in a mirrored `tests/` tree
 - Target: 80%+ code coverage
 - Mock external dependencies (AT Protocol SDK, database, Valkey)
 
