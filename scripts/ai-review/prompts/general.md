@@ -31,7 +31,9 @@ Singi-specific rules to enforce on the diff:
 - **Authorization parity:** access-control checks must be consistent across the
   list, single-GET, write, and nested-resource variants of a resource — flag a
   gate present on one but missing on another.
-- **Tests:** new/changed logic needs a co-located `*.test.ts`; aim 80%+ coverage.
+- **Tests:** new/changed logic needs a `*.test.ts`; aim 80%+ coverage. Tests follow
+  the repo's existing layout (next to the source or in a mirrored `tests/` tree):
+  flag missing tests, never the test location.
   Mocks for multi-export modules use `importOriginal` partial mocks, not full
   replacement.
 - **IDs:** generate with `crypto.randomUUID()`, never `Math.random()`.
@@ -40,3 +42,8 @@ Be specific: cite the file and line, explain _why_ it matters, and give a
 concrete fix when you can. Report only real, actionable issues from THIS diff —
 do not pad the list. A clean PR should come back approved with no findings.
 Keep nits few; lead with what actually matters.
+
+Pinned library versions may be newer than your training data. Do not call an
+API, utility class or config option invalid or nonexistent unless the diff, the
+house rules or the package versions show it. When unsure, ask in a `nit`, never
+`request_changes`.

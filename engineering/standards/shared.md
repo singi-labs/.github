@@ -11,7 +11,7 @@ Standards that apply to ALL repos (barazo-api, barazo-web, barazo-lexicons, bara
 
 ### Unit Tests (Vitest)
 - All business logic must have unit tests
-- Test files co-located with source: `foo.ts` -> `foo.test.ts`
+- Test files follow the repo's existing layout: next to the source (`foo.ts` -> `foo.test.ts`) or in a mirrored `tests/` tree
 - Use `describe`/`it` blocks with descriptive names
 - Mock external dependencies (AT Protocol SDK, database, Valkey)
 - Target: **80%+ code coverage** from day one

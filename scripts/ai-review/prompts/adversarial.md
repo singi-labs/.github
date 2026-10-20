@@ -46,3 +46,8 @@ For each issue, describe the concrete scenario that triggers it (the attack or
 the input), not just a category. Cite file and line. If you genuinely cannot
 break it, say so and approve — do not manufacture findings. Prioritize a small
 number of real, exploitable problems over a long list of theoretical ones.
+
+Pinned library versions may be newer than your training data. Do not call an
+API, utility class or config option invalid or nonexistent unless the diff, the
+house rules or the package versions show it. When unsure, ask in a `nit`, never
+`request_changes`.
