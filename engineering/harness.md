@@ -59,7 +59,7 @@ Every component below exists in our setup. Naming them gives each an owner and a
 | **Tools** | package scripts, Docker services, the `gh` CLI | each repo's `package.json` / compose files |
 | **Sandboxes / execution** | local Docker services; CI runners; scoped contributor access (no production, no deploy secrets) | repos + CI + org team permissions |
 | **Orchestration** | the Project board (the "factory floor"); task decomposition; routing mechanical work to cheaper models | org project + maintainer tooling |
-| **Guardrails / hooks** | git hooks (lint-staged pre-commit, commit-message lint, pre-push lint+typecheck+build+test); CI checks | committed `.husky/` + CI |
+| **Guardrails / hooks** | git hooks (lint-staged pre-commit, commit-message lint, pre-push lint+typecheck+build, which is build-only in some repos); CI checks, which also run the tests | committed `.husky/` + CI |
 | **Verification** | the test suites; a blocking automated AI review check; CODEOWNERS + branch protection + maintainer review | repo tests, org workflows, rulesets |
 | **Observability** | error tracking, metrics, structured logs | production infrastructure (maintainer-operated) |
 
@@ -95,7 +95,7 @@ Deterministic — code, not "you were told":
 - **No secrets in the tree** — secret scanning runs on every PR (see
   [`templates/pr-gates.yml`](templates/pr-gates.yml)); `.env` and keys are git-ignored.
 - **Conventional commits** — enforced by the commit-message hook.
-- **Green before merge** — pre-push runs lint + typecheck + build + test; CI repeats
+- **Green before merge** — pre-push runs lint + typecheck + build (tests run in CI, not pre-push); CI repeats
   them as the hard gate; the automated reviewer posts a blocking check; a maintainer
   reviews.
 - **No AI attribution** in commits/PRs — write neutral messages; no `Co-Authored-By`
