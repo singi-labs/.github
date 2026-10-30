@@ -58,14 +58,14 @@ The schema cannot express everything a writer needs. The `description` of the re
 - **`createdAt`:** set it on create. On update, keep the value of the existing record (`buildRecordWithPreservedCreatedAt`).
 - **Read, then merge.** An update replaces the whole record. Read it first with `getPdsRecord`, then build the new record. Fields the form does not handle are carried over: either list them in `PRESERVED_FIELDS_ON_UPDATE` (kept in step with the lexicon by a test) or spread-merge the existing record. A field the form clears is removed explicitly (`omitClearedFields`).
 - **Never drop unknown fields.** Other writers may have added fields Sifa does not know. Write schemas use `.passthrough()`, not `.strict()`. A test asserts that each new field survives parsing.
-- **Write-side validation must match the lexicon limits**, or be stricter on purpose and documented. It must never accept a value the lexicon forbids.
+- **Write-side validation must match the lexicon limits**, or be stricter on purpose and documented. It must never accept a value the lexicon forbids. Limits count graphemes and UTF-8 bytes, not string length. Before the write, check the assembled record (request body plus carried-over fields) against the vendored lexicon with `lexiconRecordIssue`, and return a 400 at the failing field's path. A stored value over the limit blocks the save until the user shortens it.
 - **Enrichment on write** (for example `agentRef`, company DID): diff before writing to avoid needless commits. Only use bindings Sifa already has; do not resolve over the network on the write path. The same enrichment must also exist at index time (section 3).
 - **Blobs:** upload first, then write the reference. Do not leave a stranded blob when the record write fails.
 
 ### Sending the write
 
 - `writeToUserPds` sends `applyWrites` with `validate: false`: the PDS does not know Sifa's lexicons. Sifa's own validation is the only check before the write.
-- **Batch related operations** in one `applyWrites`, for example demoting the old primary and promoting the new one.
+- **Batch related operations** in one `applyWrites`. Setting a primary clears `isPrimary` on every other record of that section that claims it, in the same batch (`collectOtherPrimaryClaimOps`), not only on the previous primary.
 - Retries are safe because operations are keyed by record key.
 
 ### Write-through and the Jetstream echo
@@ -88,12 +88,13 @@ The schema cannot express everything a writer needs. The `description` of the re
 
 - **Validate against the lexicon only** (section 0). Check one field on its own when only that field is used (for example `entityRef`). Do not let one bad optional field drop the whole record.
 - **Read every shape that was ever published**, with a clear precedence, in one shared helper that the Jetstream indexer, write-through and sync all use. Examples: nested `agentRef` over flat company fields; `locality`/`country` over `city`/`countryCode`; `startedAt` over `startDate`. API responses keep returning the old field names until no consumer reads them.
-- **Derive at index time, keep the raw data:** geocoding, country pairs, organization links, a deterministic primary when several records claim it, ignoring references that no longer resolve.
+- **Derive at index time, keep the raw data:** geocoding, country pairs, organization links, ignoring references that no longer resolve.
+- **One primary per section, picked at read time.** Several records can claim `isPrimary`. The database keeps each record's own flag, and every read applies the same rule: the newest `createdAt` wins, a tie goes to the highest rkey in code-unit order (`COLLATE "C"`). A position, involvement or project with an end date never wins (`isOngoingRecord`). Use `pickPrimaryRkey` in TypeScript and `PRIMARY_WINNER_ORDER` in SQL, so both give the same winner. Never take `limit(1)` without this ordering.
 - **Do not change lexicon-valid text on ingest.** Store it as written and escape it when rendering. Sanitising on ingest can change or empty a valid value (for example a title containing `<T>`).
 - **Guard every parse**, `createdAt` included. A value that throws must not drop the record or stop the indexer.
 - **Upserts are idempotent**, keyed on `(did, rkey)`. Jetstream replays from its cursor after a restart.
 - **CIDs** are stored for collections that others confirm, because a confirmation points at an exact version.
-- **Sync and backfill page through all records** with the cursor. Never stop at the first page.
+- **Sync and backfill page through all records** with the cursor (`listAllPdsRecords`), never stopping at the first page. Sync and reconcile index through the same indexers as Jetstream, from one collection table (`SYNC_COLLECTIONS`).
 - **Feed cards** come from the SDK view model (`toStreamCardVM`). Test a new record type by running a real record through it.
 
 ---
@@ -103,7 +104,7 @@ The schema cannot express everything a writer needs. The `description` of the re
 1. **sifa-lexicons:** change the JSON, run `npm run generate`, merge. **Merging does not publish the schema.** The publish workflow writes `com.atproto.lexicon.schema` records to the lexicon authority account, and it can fail silently when its token expires. Check the published record on the PDS afterwards.
 2. **Permission sets** (`id.sifa.auth*`): when a collection is added, add it to the matching permission set.
 3. **sifa-sdk:** types, Zod schemas (matching the lexicon limits, `.passthrough()`), changeset, publish.
-4. **sifa-api:** refresh `tests/fixtures/lexicons/` from sifa-lexicons `origin/main` (copy, never edit by hand). The lexicon conformance test must pass without exemptions: database columns are named like the lexicon field. Add the field to the Drizzle schema with a generated migration, the indexer (insert and conflict update), write-through, sync and the profile view responses.
+4. **sifa-api:** refresh `src/lexicons/` from sifa-lexicons `origin/main` with `scripts/vendor-lexicons.sh` (never edit by hand). The ingest gate and the write routes validate against these files. The lexicon conformance test must pass without exemptions: database columns are named like the lexicon field. Add the field to the Drizzle schema with a generated migration, the indexer (insert and conflict update), write-through, sync and the profile view responses.
 5. **sifa-web:** bump the SDK pin in both `dependencies` and `pnpm.overrides`.
 6. **Deploy order:** lexicons and SDK, then sifa-api, then sifa-web.
 
